@@ -75,7 +75,7 @@ void readInputFile(String kp, String strArr[], FILE *fPtr)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
-  fPtr = fopen("phrases_1.bin",rb);
+  fPtr = fopen("phrases_1.bin","rb");
   fread(kp,sizeof(String),1,fPtr);
   fread(strArr,sizeof(String),N_PHRASES,fPtr);
 }
