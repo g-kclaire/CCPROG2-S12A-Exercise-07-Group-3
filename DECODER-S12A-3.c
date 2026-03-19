@@ -67,7 +67,11 @@ void decode(char *ciphertext, int shift)
  ******************************************************************************/
 
 /**
- * <Provide complete function documentation>
+ * Reads in the key phrase and the array of phrases from the binary 1 file.
+ * 
+ *    @param kp: for storing key phrase
+ *    @param strArr[]: for storing array of phrases (max is 50)
+ *    @param *fPtr: for opening file
  */
 void readInputFile(String kp, String strArr[], FILE *fPtr)
 { /*
@@ -78,6 +82,7 @@ void readInputFile(String kp, String strArr[], FILE *fPtr)
   fPtr = fopen("phrases_1.bin","rb");
   fread(kp,sizeof(String),1,fPtr);
   fread(strArr,sizeof(String),N_PHRASES,fPtr);
+  fclose(fPtr);
 }
 
 /**
@@ -89,8 +94,14 @@ int calculateShift(String kp)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
-
-  return 999; // replace with actual return value
+  int res1, fres;
+  int kplen = strlen(kp);
+  
+  res1 = (MAX + N_PHRASES);
+  fres = res1 % kplen;
+  
+  
+  return fres; // replace with actual return value
 }
 
 /**
@@ -137,6 +148,8 @@ int main()
   int shift;
 
   FILE *fIn, *fOut;
+  readInputFile(keyPhrase,phrases,fIn);
+  calculateShift(keyPhrase);
 
   // You are NOT allowed to declare any other variables in main()
 
