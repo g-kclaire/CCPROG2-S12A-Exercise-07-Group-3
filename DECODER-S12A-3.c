@@ -105,7 +105,11 @@ void getLongestPhrase(String result, String strArr[])
 }
 
 /**
- * <Provide complete function documentation>
+ * Writes the output file containing shift, key phrase, and longest phrase
+ * @param kp The decoded key phrase
+ * @param longestPhrase The decoded longest phrase
+ * @param shift The computed shift value
+ * @param fPtr The pointer to the file to be dealt with
  */
 void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
 { /*
@@ -113,6 +117,11 @@ void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
+  fPtr = fopen("answer.txt", "w");
+  fprintf(fPtr, "Shift: %d\n", shift);
+  fprintf(fPtr, "Key Phrase: %s\n", kp);
+  fprintf(fPtr, "Longest Phrase: %s\n", longestPhrase);
+  fclose(fPtr);
 }
 
 /******************************************************************************
