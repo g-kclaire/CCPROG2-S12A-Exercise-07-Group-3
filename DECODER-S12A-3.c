@@ -67,7 +67,11 @@ void decode(char *ciphertext, int shift)
  ******************************************************************************/
 
 /**
- * <Provide complete function documentation>
+ * Reads in the key phrase and the array of phrases from the binary 1 file.
+ * 
+ *    @param kp: for storing key phrase
+ *    @param strArr[]: for storing array of phrases (max is 50)
+ *    @param *fPtr: for opening file
  */
 void readInputFile(String kp, String strArr[], FILE *fPtr)
 { /*
@@ -78,6 +82,7 @@ void readInputFile(String kp, String strArr[], FILE *fPtr)
   fPtr = fopen("phrases_1.bin","rb");
   fread(kp,sizeof(String),1,fPtr);
   fread(strArr,sizeof(String),N_PHRASES,fPtr);
+  fclose(fPtr);
 }
 
 /**
