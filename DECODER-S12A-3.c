@@ -135,6 +135,7 @@ int main()
 
   FILE *fIn, *fOut;
   readInputFile(keyPhrase,phrases,fIn);
+  calculateShift(keyPhrase);
 
   // You are NOT allowed to declare any other variables in main()
 
