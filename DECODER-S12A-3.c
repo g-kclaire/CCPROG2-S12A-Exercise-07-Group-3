@@ -116,14 +116,15 @@ void getLongestPhrase(String result, String strArr[])
 int i;
 int index_high = 0;
 
-for (i = 0; i < N_PHRASES; i++)
-{
-    if (strlen(strArr[i]) > strlen(strArr[index_high]))
-    {
-        strcpy(result, strArr[i]);
-        index_high = i;
-    }
-}
+	for (i = 0; i < N_PHRASES; i++)
+	{
+    	if (strlen(strArr[i]) > strlen(strArr[index_high]))
+    	{
+        	strcpy(result, strArr[i]);
+        	index_high = i;
+    	}
+	}
+	strcpy(result, strArr[index_high]);
 
 }
 
