@@ -145,6 +145,8 @@ void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
   */
   fPtr = fopen("answer.txt", "w");
 	
+  decode(kp,shift);
+  decode(longestPhrase, shift);
 	
   fprintf(fPtr, "Shift: %d\n", shift);
   fprintf(fPtr, "Key Phrase: %s\n", kp);
