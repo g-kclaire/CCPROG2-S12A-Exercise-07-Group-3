@@ -86,7 +86,8 @@ void readInputFile(String kp, String strArr[], FILE *fPtr)
 }
 
 /**
- * <Provide complete function documentation>
+ * Calculates the shift value using max chars, max phrases, and key phrase length
+ * @param kp The decoded key phrase
  */
 int calculateShift(String kp)
 { /*
@@ -96,11 +97,10 @@ int calculateShift(String kp)
   */
   int res1, fres;
   int kplen = strlen(kp);
-  
+
   res1 = (MAX + N_PHRASES);
   fres = res1 % kplen;
-  
-  
+
   return fres; // replace with actual return value
 }
 
