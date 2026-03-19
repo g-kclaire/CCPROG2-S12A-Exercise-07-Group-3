@@ -79,10 +79,10 @@ void readInputFile(String kp, String strArr[], FILE *fPtr)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
-  fPtr = fopen("phrases_1.bin","rb");
+ 
   fread(kp,sizeof(String),1,fPtr);
   fread(strArr,sizeof(String),N_PHRASES,fPtr);
-  fclose(fPtr);
+
 }
 
 /**
@@ -143,7 +143,7 @@ void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
-  fPtr = fopen("answer.txt", "w");
+  
 	
   decode(kp,shift);
   decode(longestPhrase, shift);
@@ -151,7 +151,7 @@ void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
   fprintf(fPtr, "Shift: %d\n", shift);
   fprintf(fPtr, "Key Phrase: %s\n", kp);
   fprintf(fPtr, "Longest Phrase: %s\n", longestPhrase);
-  fclose(fPtr);
+ 
 }
 
 /******************************************************************************
@@ -167,10 +167,14 @@ int main()
   int shift;
 
   FILE *fIn, *fOut;
+   fIn = fopen("phrases_1.bin","rb");
   readInputFile(keyPhrase,phrases,fIn);
-  calculateShift(keyPhrase);
+    fclose(fIn);
+  shift = calculateShift(keyPhrase);
   getLongestPhrase(longestPhrase,phrases);
+  fOut = fopen("answer.txt", "w");
   writeOutputFile(keyPhrase,longestPhrase,shift,fOut);
+   fclose(fOut);
 
   // You are NOT allowed to declare any other variables in main()
 
