@@ -106,6 +106,8 @@ int calculateShift(String kp)
 
 /**
  * Gets the longest Phrase in the array of Phrases
+ * @param result stores the longest phrase
+ * @param strArr[] stores the array of phrases
  */
 void getLongestPhrase(String result, String strArr[])
 { /*
