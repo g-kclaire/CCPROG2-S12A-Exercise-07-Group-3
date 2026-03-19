@@ -113,6 +113,18 @@ void getLongestPhrase(String result, String strArr[])
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
+int i;
+int index_high = 0;
+
+for (i = 0; i < N_PHRASES; i++)
+{
+    if (strlen(strArr[i]) > strlen(strArr[index_high]))
+    {
+        strcpy(result, strArr[i]);
+        index_high = i;
+    }
+}
+
 }
 
 /**
