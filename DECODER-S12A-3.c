@@ -89,8 +89,14 @@ int calculateShift(String kp)
     Do NOT use printf() nor scanf() in your final solution
     Do NOT modify/change the return type nor parameters
   */
-
-  return 999; // replace with actual return value
+  int res1, fres;
+  int kplen = strlen(kp);
+  
+  res1 = (MAX + N_PHRASES);
+  fres = res1 % kplen;
+  
+  
+  return fres; // replace with actual return value
 }
 
 /**
