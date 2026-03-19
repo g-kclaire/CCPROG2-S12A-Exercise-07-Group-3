@@ -150,6 +150,7 @@ int main()
   FILE *fIn, *fOut;
   readInputFile(keyPhrase,phrases,fIn);
   calculateShift(keyPhrase);
+  writeOutputFile(keyPhrase,longestPhrase,shift,fOut);
 
   // You are NOT allowed to declare any other variables in main()
 
