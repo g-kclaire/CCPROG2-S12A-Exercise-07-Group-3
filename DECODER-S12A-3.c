@@ -128,6 +128,7 @@ int main()
   int shift;
 
   FILE *fIn, *fOut;
+  readInputFile(keyPhrase,phrases,fIn);
 
   // You are NOT allowed to declare any other variables in main()
 
