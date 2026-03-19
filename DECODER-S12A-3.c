@@ -142,6 +142,8 @@ void writeOutputFile(String kp, String longestPhrase, int shift, FILE *fPtr)
     Do NOT modify/change the return type nor parameters
   */
   fPtr = fopen("answer.txt", "w");
+	
+	
   fprintf(fPtr, "Shift: %d\n", shift);
   fprintf(fPtr, "Key Phrase: %s\n", kp);
   fprintf(fPtr, "Longest Phrase: %s\n", longestPhrase);
@@ -163,6 +165,7 @@ int main()
   FILE *fIn, *fOut;
   readInputFile(keyPhrase,phrases,fIn);
   calculateShift(keyPhrase);
+  getLongestPhrase(longestPhrase,phrases);
   writeOutputFile(keyPhrase,longestPhrase,shift,fOut);
 
   // You are NOT allowed to declare any other variables in main()
